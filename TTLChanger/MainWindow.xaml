@@ -1,0 +1,131 @@
+﻿<Window x:Class="TTLChanger.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TTLChanger"
+        mc:Ignorable="d"
+        Title="TTL Changer" 
+        x:Name="AppWindow"
+        WindowStartupLocation="CenterScreen"
+        Height="270" 
+        Width="480 "
+        WindowStyle="None"
+        AllowsTransparency="False"
+        ResizeMode="NoResize"
+        SnapsToDevicePixels="True"
+        TextOptions.TextFormattingMode="Display">
+
+    <Window.DataContext>
+        <local:WindowViewModel/>
+    </Window.DataContext>
+
+    <Grid Background="{StaticResource BgDarkGrayBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Left Part -->
+        <Rectangle Fill="{StaticResource BgGrayBrush}" Effect="{StaticResource DropShadowRight}"/>
+
+        <!-- Current TTL -->
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 20">
+            <Label Content="{Binding CurrentTTL}" 
+                   FontFamily="{StaticResource Segoe UI}" 
+                   FontSize="120"
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"
+                   Margin="0 0"
+                   Padding="0"
+                   Foreground="{StaticResource OrangeToRed}"/>
+            <Label Content="{Binding TTLLabel}" 
+                   FontFamily="{StaticResource Segoe UI}" 
+                   FontSize="18" 
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="{StaticResource OrangeBrush}"
+                   Margin="0"
+                   Padding="0"/>
+        </StackPanel>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="84"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Navigation Panel -->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="46"/>
+                    <ColumnDefinition Width="46"/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- Drag Panel -->
+                <StackPanel x:Name="DragPanel" Background="{StaticResource BgDarkGrayBrush}" MouseDown="DragPanel_MouseDown"/>
+
+                <!-- Minimize Button -->
+                <Button Grid.Column="1" Style="{StaticResource NavButton}" Command="{Binding MinimizeCommand}" Content="—" Padding="0 1 0 0">
+                </Button>
+
+                <!-- Close Button -->
+                <Button Grid.Column="2" Style="{StaticResource NavButton}" Command="{Binding CloseCommand}" Content="╳">
+                </Button>
+                
+            </Grid>
+            
+            <!-- Textbox And Set Button -->
+            <StackPanel Grid.Row="1" Height="30" Width="160" 
+                        Effect="{StaticResource DropShadowDown}" 
+                         Background="{StaticResource BgGrayBrush}"
+                        VerticalAlignment="Center"
+                        Margin="0 0 0 -8">
+                <Grid Height="30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- Main TextBox -->
+                    <TextBox x:Name="TTLTextBox" Grid.Column="0" Style="{StaticResource MainTextBox}" Text="{Binding TextBoxValue, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <!-- Set Button -->
+                    <Button Grid.Column="1" Style="{StaticResource SetButton}" Command="{Binding SetTTL}"/>
+
+                </Grid>
+            </StackPanel>
+            
+            <!-- CheckBoxes -->
+            <StackPanel Grid.Row="2">
+
+                <StackPanel>
+                    <CheckBox Style="{StaticResource DefaultCheckBox}" 
+                              Content="Create a desktop shortcut"/>
+                </StackPanel>
+                
+                <StackPanel>
+                    <Button Style="{StaticResource AdditionalButton}" 
+                            Command="{Binding SetSystemTTL}"
+                            Effect="{StaticResource DropShadowDown}" 
+                            Content="Set system TTL value"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <Button Style="{StaticResource AdditionalButton}" 
+                            Command="{Binding CreateShortcut}"  
+                            Effect="{StaticResource DropShadowDown}"  
+                            Content="Create a desktop shortcut"/>
+                </StackPanel>
+
+                
+                
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+
+</Window>

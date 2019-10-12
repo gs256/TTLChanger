@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:TTLChanger">
+    
+    <Color x:Key="RedOrange">#ef3300</Color>
+    <SolidColorBrush x:Key="RedOrangeBrush" Color="{StaticResource RedOrange}"/>
+
+    <Color x:Key="Orange">#ff7c00</Color>
+    <SolidColorBrush x:Key="OrangeBrush" Color="{StaticResource Orange}"/>
+    
+    <Color x:Key="BgDarkGray">#1c1c1c</Color>
+    <SolidColorBrush x:Key="BgDarkGrayBrush" Color="{StaticResource BgDarkGray}"/>
+    
+    <Color x:Key="BgGray">#212125</Color>
+    <SolidColorBrush x:Key="BgGrayBrush" Color="{StaticResource BgGray}"/>
+
+    <Color x:Key="BgLightGray">#252529</Color>
+    <SolidColorBrush x:Key="BgLightGrayBrush" Color="{StaticResource BgLightGray}"/>
+
+    <LinearGradientBrush x:Key="RedToOrange" StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="{StaticResource RedOrange}" Offset="0" />
+                <GradientStop Color="{StaticResource Orange}" Offset="1" />
+            </GradientStopCollection>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="OrangeToRed" StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="{StaticResource Orange}" Offset="0" />
+                <GradientStop Color="{StaticResource RedOrange}" Offset="1" />
+            </GradientStopCollection>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+
+
+</ResourceDictionary>

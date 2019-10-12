@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTLChanger", "TTLChanger\TTLChanger.csproj", "{C71A9D47-09D8-4AD7-8218-22A07F410191}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C71A9D47-09D8-4AD7-8218-22A07F410191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C71A9D47-09D8-4AD7-8218-22A07F410191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C71A9D47-09D8-4AD7-8218-22A07F410191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C71A9D47-09D8-4AD7-8218-22A07F410191}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62FA705D-A446-4077-B3CE-67C8A8B2F19F}
+	EndGlobalSection
+EndGlobal
